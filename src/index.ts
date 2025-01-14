@@ -86,11 +86,10 @@ interface Edge {
       /**
        * voting and counting
        */
-      if (hour >= 4 && hour < 10) morning++;
+      if (hour >= 5 && hour < 10) morning++;
       if (hour >= 10 && hour < 17) daytime++;
       if (hour >= 17 && hour < 22) evening++;
-      if (hour >= 22 && hour < 24) night++;
-      if (hour >= 0 && hour < 4) night++;
+      if ((hour >= 22 && hour < 24) || (hour >= 0 && hour < 5)) night++;
     });
   });
 
